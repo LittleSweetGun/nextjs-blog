@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout, { siteTitle } from 'C:/Users/jeann/Next/nextjs-blog/components/layout';
-import utilStyles from 'C:/Users/jeann/Next/nextjs-blog/styles1/utils.module.css';
+import Layout, { siteTitle } from '../components/layout';
+import utilStyles from '../styles1/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
-import Date from 'C:/Users/jeann/Next/nextjs-blog/components/date';
+import Date from '../components/date';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
