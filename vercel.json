@@ -1,0 +1,30 @@
+{
+    "git":{
+        "deploymentEnabled":{
+          "main" : false
+        }
+      }  
+    }
+
+{
+    "github" : {    
+        "autoAlias": false
+          }
+        }
+{
+    "github":{
+        "silent": true
+            }
+        }
+{
+    "github": {
+        "autoJobCancelation": false
+            }
+        }
+
+{
+    "github": {
+        "enabled": false
+        }
+    }
+    
