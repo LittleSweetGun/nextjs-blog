@@ -1,8 +1,8 @@
-import Layout from 'nextjs-blog/components/layout';
-import { getAllPostIds, getPostData } from 'nextjs-blog/lib/posts';
+import Layout from '../../../components/layout';
+import { getAllPostIds, getPostData } from '../../../lib/posts';
 import Head from 'next/head';
-import Date from 'nextjs-blog/components/date';
-import utilStyles from 'nextjs-blog/styles1/utils.module.css';
+import Date from '../../../components/date';
+import utilStyles from '../../../styles1/utils.module.css';
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
