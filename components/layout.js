@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './layout.module.css';
-import utilStyles from 'C:/Users/jeann/Next/nextjs-blog/styles1/utils.module.css';
+import utilStyles from '../styles1/utils.module.css';
 import Link from 'next/link';
 
 const name = 'Jeanne Zak';
