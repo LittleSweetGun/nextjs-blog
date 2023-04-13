@@ -1,7 +1,5 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from './layout.module.css';
-import utilStyles from '../styles1/utils.module.css';
 import Link from 'next/link';
 
 const name = 'Jeanne Zak';
@@ -9,12 +7,12 @@ export const siteTitle = 'Blog';
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div className=''>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Vercel blog"
         />
         <meta
           property="og:image"
@@ -23,20 +21,19 @@ export default function Layout({ children, home }) {
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
         <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header className='flex flex-col items-center'>
         {home ? (
           <>
             <Image
               priority
               src="/images/img1.jpg"
-              className={utilStyles.borderCircle}
+              className='rounded-full'
+              width = {144}
               height={144}
-              width={144}
               alt=""
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className='text-3xl font-black'>{name}</h1>
           </>
         ) : (
           <>
@@ -44,14 +41,14 @@ export default function Layout({ children, home }) {
               <Image
                 priority
                 src="/images/img1.jpg"
-                className={utilStyles.borderCircle}
+                className='rounded-full'
                 height={108}
                 width={108}
                 alt=""
               />
             </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
+            <h2 className='hover:text-cyan-700 text-xl font-black'>
+              <Link href="/">
                 {name}
               </Link>
             </h2>
@@ -60,7 +57,7 @@ export default function Layout({ children, home }) {
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className='text-base hover:text-cyan-700'>
           <Link href="/">← Back to home</Link>
         </div>
       )}
