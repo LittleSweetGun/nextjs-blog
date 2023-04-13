@@ -33,6 +33,7 @@ export default function Home({allPostsData}) {
               </Link>
               <br />
               <small className="text-sm text-gray-600">
+
                 <Date dateString={date} />
               </small>
             </li>

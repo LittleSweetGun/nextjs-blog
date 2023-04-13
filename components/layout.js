@@ -7,12 +7,16 @@ export const siteTitle = 'Blog';
 
 export default function Layout({ children, home }) {
   return (
+
     <div className="max-w-2xl mx-auto">
+
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
+
           content="Skidau blog"
+
         />
         <meta
           property="og:image"
@@ -22,6 +26,7 @@ export default function Layout({ children, home }) {
         />
         <meta name="og:title" content={siteTitle} />
       </Head>
+
       <header className=" bg-black flex flex-col items-center pt-7">
         {home ? (
           <>
@@ -48,6 +53,7 @@ export default function Layout({ children, home }) {
                   alt=""
                 />
               </div>
+
               </Link>
           </>
         )}
@@ -56,7 +62,9 @@ export default function Layout({ children, home }) {
         <div className="max-w-2xl mx-auto">{children}</div>
       </main>
       {!home && (
+
         <div className="text-base hover:text-cyan-700 mt-10 mb-4">
+
           <Link href="/">← Back to home</Link>
         </div>
       )}
