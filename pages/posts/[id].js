@@ -1,8 +1,7 @@
-import Layout from 'C:/Users/jeann/Next/nextjs-blog/components/layout';
-import { getAllPostIds, getPostData } from 'C:/Users/jeann/Next/nextjs-blog/lib/posts';
+import Layout from '../../components/layout';
+import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
-import Date from 'C:/Users/jeann/Next/nextjs-blog/components/date';
-import utilStyles from 'C:/Users/jeann/Next/nextjs-blog/styles1/utils.module.css';
+import Date from '../../components/date';
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -19,12 +18,12 @@ export default function Post({ postData }) {
             <Head>
                 <title>{postData.title}</title>
             </Head>
-            <article>
-                <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-                <div className={utilStyles.lightText}>
+            <article className='space-y-3'>
+                <h1 className='font-bold'>{postData.title}</h1>
+                <div className='text-xs'>
                     <Date dateString={postData.date} />
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+                <div className='text-justify space-y-1'dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
             </article>
         </Layout>
       );
