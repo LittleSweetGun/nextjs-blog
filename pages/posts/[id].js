@@ -15,22 +15,20 @@ export async function getStaticProps({ params }) {
 } 
 
 export default function Post({ postData }) {
-    return (
-        <Layout>
-            <Head>
-                <title>{postData.title}</title>
-            </Head>
-
-            <article className="max-w-prose mx-auto px-5">
-                <h1 className="text-4xl font-bold mb-2">{postData.title}</h1>
-                <div className="text-xs text-gray-500 mb-4">
-                    <Date dateString={postData.date} />
-                </div>
-                <div className="text-gray-800 prose prose-lg px-3" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-
-            </article>
-        </Layout>
-      );
+  return (
+    <Layout>
+      <Head>
+        <title>{postData.title}</title>
+      </Head>
+      <article className='space-y-3'>
+        <h1 className='font-bold'>{postData.title}</h1>
+        <div className='text-xs'>
+          <Date dateString={postData.date} />
+        </div>
+        <div className='text-justify space-y-1' dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      </article>
+    </Layout>
+  );
 }
 
 export async function getStaticPaths() {
