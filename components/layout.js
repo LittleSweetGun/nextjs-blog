@@ -11,6 +11,7 @@ export default function Layout({ children, home }) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Skidau blog" />
+
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -20,6 +21,7 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
       </Head>
       <header className="bg-black flex flex-col items-center pt-7">
+
         {home ? (
           <>
             <div className="relative w-28 h-28 overflow-hidden rounded-full">
@@ -48,6 +50,7 @@ export default function Layout({ children, home }) {
                 />
               </div>
             </Link>
+
           </>
         )}
       </header>
@@ -56,6 +59,7 @@ export default function Layout({ children, home }) {
       </main>
       {!home && (
         <div className="bg-black text-base text-white hover:text-cyan-700 mt-10 mb-4">
+
           <Link href="/">← Back to home</Link>
         </div>
       )}

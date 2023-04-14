@@ -19,7 +19,6 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-
       <section className="space-y-4 font-sans text-justify text-gray-800 px-4">
         <p className="text-lg">
           Student of Computer and Data Sciences with a specialization in
