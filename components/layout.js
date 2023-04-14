@@ -7,12 +7,16 @@ export const siteTitle = 'Blog';
 
 export default function Layout({ children, home }) {
   return (
-    <div className=''>
+
+    <div className="max-w-2xl mx-auto">
+
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Vercel blog"
+
+          content="Skidau blog"
+
         />
         <meta
           property="og:image"
@@ -22,42 +26,45 @@ export default function Layout({ children, home }) {
         />
         <meta name="og:title" content={siteTitle} />
       </Head>
-      <header className='flex flex-col items-center'>
+
+      <header className=" bg-black flex flex-col items-center pt-7">
         {home ? (
           <>
-            <Image
-              priority
-              src="/images/img1.jpg"
-              className='rounded-full'
-              width = {144}
-              height={144}
-              alt=""
-            />
-            <h1 className='text-3xl font-black'>{name}</h1>
+            <div className="relative w-28 h-28 overflow-hidden rounded-full">
+              <Image
+                priority
+                src="/images/img1.jpg"
+                width={144}
+                height={144}
+                alt=""
+              />
+            </div>
+            <h1 className="absolute pt-12 text-3xl text-gray-200 font-semibold tracking-tight">{name}</h1>
           </>
         ) : (
           <>
             <Link href="/">
-              <Image
-                priority
-                src="/images/img1.jpg"
-                className='rounded-full'
-                height={108}
-                width={108}
-                alt=""
-              />
-            </Link>
-            <h2 className='hover:text-cyan-700 text-xl font-black'>
-              <Link href="/">
-                {name}
+              <div className="w-16 h-16 overflow-hidden rounded-full">
+                <Image
+                  priority
+                  src="/images/img1.jpg"
+                  width={108}
+                  height={108}
+                  alt=""
+                />
+              </div>
+
               </Link>
-            </h2>
           </>
         )}
       </header>
-      <main>{children}</main>
+      <main className="mt-10">
+        <div className="max-w-2xl mx-auto">{children}</div>
+      </main>
       {!home && (
-        <div className='text-base hover:text-cyan-700'>
+
+        <div className="text-base hover:text-cyan-700 mt-10 mb-4">
+
           <Link href="/">← Back to home</Link>
         </div>
       )}
